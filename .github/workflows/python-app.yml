@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Job A
         run: |
-          print("run jobA on push")
+          echo "run jobA on push"
 
   jobB:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Job B
         run: |
-          print("run jobB when merging from testBranch to main")
+          echo "run jobB when merging from testBranch to main"
 
   # build:
 
