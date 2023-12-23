@@ -11,7 +11,7 @@ on:
       - main
     types:
       - closed
-  workflow_dispatch: //test
+  workflow_dispatch: # test
 
 permissions:
   contents: read
