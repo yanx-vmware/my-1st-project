@@ -1,0 +1,19 @@
+name: pipeline when there is a push
+
+on:
+  push:
+    branches: [ "test-branchA" ]
+
+permissions:
+  contents: read
+
+jobs:
+  jobA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Job A
+        run: |
+          echo "run jobA on push"
