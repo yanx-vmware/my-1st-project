@@ -1,0 +1,18 @@
+name: test-dependency
+
+on:
+  push:
+    branches: [ "test-branchA" ]
+
+permissions:
+  contents: read
+
+jobs:
+  dependent-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print parameters
+      run: |
+        echo "Parameter 1: ${{ github.event.inputs.parameter1 }}"
+        echo "Parameter 2: ${{ github.event.inputs.parameter2 }}"

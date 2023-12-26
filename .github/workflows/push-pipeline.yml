@@ -46,3 +46,10 @@ jobs:
       - name: Run Job B
         run: |
           echo "run jobB on push"
+
+  push-jobC:
+    runs-on: ubuntu-latest
+    uses: ./.github//workflows/test-dependency-pipeline.yml
+    with:
+        parameter1: "value1"
+        parameter2: "value2"
