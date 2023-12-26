@@ -1,0 +1,15 @@
+name: test dependency1
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  dependent-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: test dependency.
+        run: echo "test"
