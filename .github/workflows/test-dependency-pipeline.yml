@@ -2,6 +2,10 @@ name: test dependency1
 
 on:
   workflow_call:
+    inputs:
+        config-path:
+          required: true
+          type: string
 
 permissions:
   contents: read
@@ -13,5 +17,4 @@ jobs:
     steps:
     - name: Print parameters
       run: |
-        echo "Parameter 1: ${{ github.event.inputs.parameter1 }}"
-        echo "Parameter 2: ${{ github.event.inputs.parameter2 }}"
+        echo "Parameter 1: ${{ inputs.config-path }}"
