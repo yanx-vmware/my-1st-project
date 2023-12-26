@@ -1,0 +1,45 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: pipeline when there is a merge
+
+on:
+  pull_request:
+    branches:
+      - main  //there is merge from test branch to main branch
+    types:
+      - closed
+
+permissions:
+  contents: read
+
+jobs:
+  merge-jobA:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.base.ref == 'main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Job B
+        run: |
+          echo "run jobB when merging from testBranch to main"
+  merge-jobB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Job A
+        run: |
+          echo "run jobA on push"
+
+  merge-jobC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Job B
+        run: |
+          echo "run jobB on push"
