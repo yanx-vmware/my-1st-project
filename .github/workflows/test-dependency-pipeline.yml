@@ -14,6 +14,7 @@ permissions:
 jobs:
   dependent-job:
     runs-on: ubuntu-latest
+    uses: actions/labeler@v4
 
     steps:
     - name: Print parameters

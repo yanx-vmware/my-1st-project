@@ -48,7 +48,6 @@ jobs:
           echo "run jobB on push"
 
   push-jobC:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/test-dependency-pipeline.yml@test-branchA
     with:
         config-path: .github/labeler.yml
