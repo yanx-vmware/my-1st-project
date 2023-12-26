@@ -19,19 +19,17 @@ jobs:
           echo "run jobA on push"
 
   push-jobB:
+    uses: ./.github/workflows/test-dependency-pipeline.yml
+
+  push-jobC:
     runs-on: ubuntu-latest
+    needs: push-jobB
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Run Job B
         run: |
-          cat ./.github/workflows/test-dependency-pipeline.yml
-          echo "run jobB on push"
-
-  push-jobC:
-    uses: ./.github/workflows/test-dependency-pipeline.yml@1.0
-    with:
-      username: Guillaume
+          echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
 
     
