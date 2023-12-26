@@ -3,7 +3,7 @@ name: pipeline when there is a merge
 on:
   pull_request:
     branches:
-      - main  //there is merge from test branch to main branch
+      - main  #there is merge from test branch to main branch
     types:
       - closed
 
