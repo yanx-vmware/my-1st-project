@@ -53,5 +53,6 @@ jobs:
     steps:
       - name: run reusable
         run: |
-          .github/workflows/test-dependency-pipeline.yml
+        pwd
+         ./.github/workflows/test-dependency-pipeline.yml
     
