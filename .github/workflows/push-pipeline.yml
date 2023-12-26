@@ -49,6 +49,7 @@ jobs:
 
   push-jobC:
     # uses: ./.github/workflows/test-dependency-pipeline.yml@test-branchA
+    runs-on: ubuntu-latest
     steps:
       - name: run reusable
         run: |
