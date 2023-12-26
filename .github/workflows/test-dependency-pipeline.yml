@@ -1,8 +1,10 @@
-name: test-dependency
+name: test dependency
 
 on:
-  push:
-    branches: [ "test-branchA" ]
+  workflow_run:
+    workflows: ["pipeline when there is a push on test-branchA"]
+    types:
+      - completed
 
 permissions:
   contents: read
