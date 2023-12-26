@@ -3,9 +3,10 @@ name: test dependency1
 on:
   workflow_call:
     inputs:
-        config-path:
-          required: true
-          type: string
+        # config-path:
+        #   required: true
+        #   type: string
+        value1:
 
 permissions:
   contents: read
@@ -17,4 +18,4 @@ jobs:
     steps:
     - name: Print parameters
       run: |
-        echo "Parameter 1: ${{ inputs.config-path }}"
+        echo "Parameter 1: ${{ inputs.value1 }}"

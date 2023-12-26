@@ -50,4 +50,5 @@ jobs:
   push-jobC:
     uses: ./.github/workflows/test-dependency-pipeline.yml@test-branchA
     with:
-        config-path: .github/labeler.yml
+        # config-path: .github/labeler.yml
+        value1: "test"
