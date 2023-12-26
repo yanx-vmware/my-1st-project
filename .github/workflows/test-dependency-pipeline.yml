@@ -23,3 +23,12 @@ jobs:
         run: echo "firstword=hello" >> $GITHUB_OUTPUT
       - id: step2
         run: echo "secondword=world" >> $GITHUB_OUTPUT
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: example_job
+    steps:
+      - env:
+          OUTPUT1: ${{needs.example_job.outputs.output1}}
+          OUTPUT2: ${{needs.example_job.outputs.output2}}
+        run: echo "$OUTPUT1 $OUTPUT2"

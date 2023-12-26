@@ -28,7 +28,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Job B
+      - name: Run Job C
         run: |
           echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
 
