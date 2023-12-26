@@ -1,10 +1,6 @@
-name: test dependency
+name: test dependency1
 
 on:
-  workflow_run:
-    workflows: ["pipeline when there is a push on test-branchA"]
-    types:
-      - completed
   workflow_call:
 
 permissions:
