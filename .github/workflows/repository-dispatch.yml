@@ -8,4 +8,4 @@ jobs:
   run_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $MESSAGE
+      - run: echo "test"
