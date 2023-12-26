@@ -49,7 +49,7 @@ jobs:
 
   push-jobC:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/test-dependency-pipeline.yml
+    uses: ./.github/workflows/test-dependency-pipeline.yml@test-branchA
     with:
         parameter1: "value1"
         parameter2: "value2"
