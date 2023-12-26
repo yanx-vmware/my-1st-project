@@ -5,6 +5,7 @@ on:
     workflows: ["pipeline when there is a push on test-branchA"]
     types:
       - completed
+  workflow_call:
 
 permissions:
   contents: read
