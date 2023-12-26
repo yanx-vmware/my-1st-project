@@ -48,4 +48,5 @@ jobs:
           echo "run jobB on push"
 
   push-jobC:
-    uses: ./.github/workflows/test-dependency-pipeline.yml@main
+    uses: ./.github/workflows/test-dependency-pipeline.yml@test-branchA
+    
