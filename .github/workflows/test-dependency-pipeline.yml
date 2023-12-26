@@ -9,11 +9,7 @@ permissions:
 jobs:
   dependent-job:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/labeler@v4
-      with:
-        configuration-path: ${{ inputs.config-path }}
-      name: Print parameters
-      run: |
-        echo "Parameter 1: ${{ inputs.config-path }}"
+      - name: test dependency.
+        run: echo "test"
