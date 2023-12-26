@@ -30,6 +30,6 @@ jobs:
 
       - name: Run Job C
         run: |
-          echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
+          echo ${{ needs.push-jobB.outputs.firstword }} ${{ needs.push-jobB.outputs.secondword }}
 
     
